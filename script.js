@@ -55,6 +55,7 @@ $('document').ready(() => {
   var music = new Audio("background_music_1.wav");
   music.volume = .2;
   music.load();
+  music.loop = true;
   music.play();
 
   // document.getElementById("backgroundAudio").play()
