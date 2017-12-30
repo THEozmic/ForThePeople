@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="style.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div id="game-board">
+
+    <div>
+      <div id="game-name">
+        <strong>
+          <span class="green">For</span>The<span class="green">People</span>
+        </strong>
+      </div>
+      <div class="game-options">
+        <button id="quit" class="secondary-btn">Quit Game</button>
+        <button id="toggle-music" class="secondary-btn">Off Music</button>
+        <button id="show-credits" class="secondary-btn">Show Credits</button>
+      </div>
+      <div id="credits" class="message">
+        <p>
+          Built by <a target="_blank" href="https://twitter.com/THEozmic">@THEozmic</a>.
+          <br/>
+          <br/>
+          Music: 
+          <div>Phoenix Wright - Ace Attorney OST: Cross Examination - Allegro 2001</div>
+          <br/>
+          <div>VVVVVV: Pushing Onwards (Indie Game Music HD) by Magnus Pålsson</div>
+          <br/>
+          <div>PMcDonald's Treasure Land Adventure Music: City</div>
+          <br/>
+        </p>
+      </div>
+      <div class="other-messages">
+        <div id="1" class="message">
+          <p>Mr. President, Your Excellency, welcome to your office! My name is Abdul, I'll be
+          your personal assistant and my duty is to make sure things go smoothly around the office.
+          </p>
+          <button class="answer-button">Alright Abdul, let's get started! 🤝</button>
+          <button class="answer-button">Nonesense! I brought my own assistant. 🤡</button>
+        </div>
+
+        <div id="2" class="message">
+          <p>
+              It's your first day in office and you see three rats doing what appears to be playing WHOT,
+              right there on your royal desk.
+            <br/>
+            <br/>
+            What do you do?
+          </p>
+          <button class="answer-button">Announce it to the public. Shame the previous presidency. 🤣</button>
+          <button class="answer-button">Ignore it, work from home. 😎</button>
+          <button class="answer-button">Solve it and face your presidential duties! 🤵🏽</button>
+        </div>
+
+        <div id="3" class="message">
+          <p>
+            You found at least two people holding public offices possibly guilty of
+            corruption and the first month in office has barely started.
+            You confront them and they offer to give you a huge share of their loot, solidly
+            support you for the next tenure plus they are same party and tribe members. What do you do?
+          </p>
+          <button class="answer-button">
+            Go to jail you filty animals! 👩🏽‍⚖️
+          </button>
+          <button class="answer-button">
+            I think it'll be nice to have these people loyal to me, like dogs! 🐩
+          </button>
+          <button class="answer-button">
+            I can't betray my party members and tribesmen. 👨‍👩‍👧‍👦
+          </button>
+        </div>
+
+        <div id="4" class="message">
+          <p>
+            There's huge unemployment in the state what could be responsible for this?
+          </p>
+          <button class="answer-button">Says who? Even if that were true, God can handle it. National prayer! 🙏🏾</button>
+          <button class="answer-button">My country men are lazy fools! 😴</button>
+          <button class="answer-button">A lot of companies are either leaving or shutting down. 🛫</button>
+          <button class="answer-button">Wow! The previous government really did some huge damage. 🤷</button>
+        </div>
+
+        <div id="5" class="message">
+          <p>
+            There's a huge polution and environment degredation happening at
+            oil extraction sites and the people aren't happy about it.
+          </p>
+          <button class="answer-button">I'm sure the polutions are greatly exagerrated. 🛀🏻</button>
+          <button class="answer-button">Can we investigate this and bring people to justice if need be? 🕵🏽‍♀️</button>
+          <button class="answer-button">I want to meet with these companies. Behind closed doors! 🐍</button>
+        </div>
+
+        <div id="6" class="message">
+          <p>
+            A man has used the weaknesses of yours and past governments to get into the hearts of
+            the people and has made them turn against your government, making them make unfavourable
+            demands.
+          </p>
+          <button class="answer-button">Give them what they want. 🌍</button>
+          <button class="answer-button">You mean there was a man? Major! 👮🏿‍♀️</button>
+          <button class="answer-button">People are stupid, let's settle the man, they'll all shut up. 💵</button>
+        </div>
+
+        <div id="7" class="message">
+          <p>
+            Recently, there has been a lot of complaints about police/military brutality.
+          </p>
+          <button class="answer-button">Criminals looking for ways to rid of the police. 🤧</button>
+          <button class="answer-button">Not under my watch! Body cams and police accountability to the rescue! 📸</button>
+          <button class="answer-button">Fire all the fucking police! ‼️</button>
+        </div>
+
+        <div id="game-result" class="message">
+          <h4>Game ended!</h4>
+          <p class="verdict">
+            You will be an <strong>excellent</strong> President! You should
+            run for President in 2019!
+          </p>
+          <p class="verdict">
+            You will be a <strong>non-indecisive</strong> President! You should
+            run for President in 2019!
+          </p>
+          <p class="verdict">
+            You will be a <strong>non-criminal</strong> President! You should
+            run for President in 2019!
+          </p>
+          <p class="verdict">
+              You will be a <strong>non-tribalistic</strong> President! You should
+              run for President in 2019!
+            </p>
+          <p class="verdict-weak">
+            You will be a <strong>weak</strong> President! You shouldn't
+            run for President in 2019!
+          </p>
+          <i class="note">*The results of this game is purely random*</i>
+          <br/>
+          <button class="replay-button">Play again!</button>
+          <a href="#" class="tweet-button">Tweet Your Verdict!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <video autoplay id="backgroundAudio" hidden>
+  </video>
+  <script src="jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
