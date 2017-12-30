@@ -93,7 +93,7 @@ function showGameEnd(viaQuit = false) {
 
     $('.verdict-weak').hide();
   }
-  $('.tweet-button').attr('href', `https://twitter.com/intent/tweet?text=${verdict} https://theozmic.github.io/forthepeople @AsoRock @MBuhari &hashtags=ForThePeopleGame,BetterNaija,LeadUsWell`);
+  $('.tweet-button').attr('href', `https://twitter.com/intent/tweet?text=${verdict} https://theozmic.github.io/ForThePeople/ @AsoRock @MBuhari &hashtags=ForThePeopleGame,BetterNaija,LeadUsWell`);
   localStorage.setItem('currentQuestion', 1);
   $('#game-result').show();
 }
