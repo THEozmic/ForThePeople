@@ -88,7 +88,7 @@ $('document').ready(() => {
 
   $('#quit').on('click', function () {
     $(this).hide();
-    $(`#${localStorage.currentQuestion}`).hide();
+    $(`#${localStorage.currentQuestion || 1}`).hide();
     showGameEnd(true);
     localStorage.setItem('currentQuestion', 1);
   });
