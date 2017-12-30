@@ -1,11 +1,11 @@
 $('document').ready(() => {
   document.getElementById("backgroundAudio").volume = 0.1;
-  var number = Math.floor(Math.random() * 3) + 1;
-  document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
-  $("#backgroundAudio").on('ended', function() {
-    var number = Math.floor(Math.random() * 3) + 1;
-    document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
-  });
+  // var number = Math.floor(Math.random() * 4) + 1;
+  // document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
+  // $("#backgroundAudio").on('ended', function() {
+  //   var number = Math.floor(Math.random() * 4) + 1;
+  //   document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
+  // });
   $('.message').hide();
   $('.verdict').hide();
   $('.verdict-weak').hide();
