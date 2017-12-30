@@ -1,5 +1,6 @@
 $('document').ready(() => {
-  $('#game-board').show();
+  $('#game-plane').show();
+  $('#loading').hide();
   $.ajax({ url: "https://forthepeopleserver.herokuapp.com/",
     success: function (questions) {
     questions.map(function (question) {
