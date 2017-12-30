@@ -1,4 +1,43 @@
 $('document').ready(() => {
+  $.ajax({ url: "https://forthepeopleserver.herokuapp.com/",
+    success: function (questions) {
+    questions.map(function (question) {
+      $('.other-messages').append(
+        `<div id="${question.id}" class="message">
+          <p>
+            ${question.content}
+          </p>
+          <button class="answer-button">${question.option1}</button>
+          <button class="answer-button">${question.option2}</button>
+          <button class="answer-button">${question.option3}</button>
+        </div>`
+      )
+    });
+  }});
+
+  $('#create-question').on('click', function () {
+    const data = {}
+    data.question = $('#new-question').value();
+    data.option1 = $('#option1').value();
+    data.option2 = $('#option2').value();
+    data.option3 = $('#option3').value();
+    $.ajax({
+      url: "https://forthepeopleserver.herokuapp.com/",
+      method: 'POST',
+      data,
+      success: function () {
+        $('#option1').value("");
+        $('#option2').value("");
+        $('#option3').value("");
+        $('#create-question-form').hide();
+      }
+    })
+  });
+
+  $('#add-question').on('click', function () {
+    $('#create-question-form').toggle();
+  })
+
   document.getElementById("backgroundAudio").volume = 0.1;
   // var number = Math.floor(Math.random() * 4) + 1;
   // document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
@@ -29,11 +68,11 @@ $('document').ready(() => {
     if (volumeStatus === 'On') {
       document.getElementById("backgroundAudio").volume = 0.0;
       volumeStatus = 'Off'
-      $(this).text('On Music')
+      $(this).text('Music On')
     } else {
       document.getElementById("backgroundAudio").volume = 0.1;
       volumeStatus = 'On'
-      $(this).text('Off Music')
+      $(this).text('Music Off')
     }
   });
 

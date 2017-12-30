@@ -63,3 +63,10 @@ button, .tweet-button {
 .tweet-button {
     height: 23px;
 }
+
+#backgroundAudio {
+    position:  absolute;
+    top:  0;
+    left:  0;
+    z-index: -1;
+}
