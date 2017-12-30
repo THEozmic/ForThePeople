@@ -38,6 +38,7 @@ $('document').ready(() => {
     $('#create-question-form').toggle();
   })
 
+  document.getElementById("backgroundAudio").play()
   document.getElementById("backgroundAudio").volume = 0.1;
   // var number = Math.floor(Math.random() * 4) + 1;
   // document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
