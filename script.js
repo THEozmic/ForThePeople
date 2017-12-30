@@ -4,15 +4,26 @@ $('document').ready(() => {
   $.ajax({ url: "https://forthepeopleserver.herokuapp.com/",
     success: function (questions) {
     questions.map(function (question) {
-      $('.other-messages').append(
-        `<div id="${question.id}" class="message">
-          <p>
-            ${question.content}
-          </p>
-          <button class="answer-button">${question.option1}</button>
-          <button class="answer-button">${question.option2}</button>
+      let questionHtml =
+      `<div id="${question.id}" class="message">
+        <p>
+          ${question.content}
+        </p>
+        <button class="answer-button">${question.option1}</button>
+        <button class="answer-button">${question.option2}</button>
+        `
+      if (question.option3 !== undefined) {
+        questionHtml += `
           <button class="answer-button">${question.option3}</button>
-        </div>`
+        </div>
+        `
+      } else {
+        questionHtml += `
+        </div>
+        `
+      }
+      $('.other-messages').append(
+        questionHtml
       )
     });
   }});
@@ -37,7 +48,8 @@ $('document').ready(() => {
   });
 
   $('#add-question').on('click', function () {
-    $('#create-question-form').toggle();
+    window.open('https://goo.gl/forms/hzLgvA964yoowB2g1', '_blank');
+    // $('#create-question-form').toggle();
   })
 
   var music = new Audio("background_music_1.wav");

@@ -70,3 +70,9 @@ button, .tweet-button {
     left:  0;
     height:  2px;
 }
+
+input[type="text"] {
+    padding: 8px;
+    width: 90%;
+    border:  1px solid;
+}

@@ -21,7 +21,7 @@
         <button id="quit" class="secondary-btn">Quit Game</button>
         <button id="toggle-music" class="secondary-btn">Music Off</button>
         <button id="show-credits" class="secondary-btn">Show Credits</button>
-        <button id="show-credits" class="secondary-btn">Add Question</button>
+        <button id="add-question" class="secondary-btn">Add Question</button>
       </div>
       <div id="credits" class="message">
         <p>
@@ -35,11 +35,15 @@
       </div>
 
       <div id="create-question-form" class="message">
-        <input type="text" placeholder="Question"/>
+        <input type="text" placeholder="Question" required/> *
         <br/>
-        <input type="text" placeholder="Option 1"/>
+        <input type="text" placeholder="Option 1" required/> *
         <br/>
-        <input type="text" placeholder="Option 2"/>
+        <input type="text" placeholder="Option 2" required/> *
+        <br/>
+        <input type="text" placeholder="Option 3"/>
+        <br/>
+        <button class="secondary-btn">Submit</button>
       </div>
 
       <div class="other-messages">
