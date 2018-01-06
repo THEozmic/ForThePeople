@@ -1,32 +1,12 @@
 $('document').ready(() => {
+  const music = new Audio("background_music_1.wav");
+  music.volume = .2;
+  music.load();
+  music.loop = true;
+  music.play();
+
   $('#game-plane').show();
   $('#loading').hide();
-  $.ajax({ url: "https://forthepeopleserver.herokuapp.com/",
-    success: function (questions) {
-    questions.map(function (question) {
-      let questionHtml =
-      `<div id="${question.id}" class="message">
-        <p>
-          ${question.content}
-        </p>
-        <button class="answer-button">${question.option1}</button>
-        <button class="answer-button">${question.option2}</button>
-        `
-      if (question.option3 !== undefined) {
-        questionHtml += `
-          <button class="answer-button">${question.option3}</button>
-        </div>
-        `
-      } else {
-        questionHtml += `
-        </div>
-        `
-      }
-      $('.other-messages').append(
-        questionHtml
-      )
-    });
-  }});
 
   $('#create-question').on('click', function () {
     const data = {}
@@ -49,23 +29,9 @@ $('document').ready(() => {
 
   $('#add-question').on('click', function () {
     window.open('https://goo.gl/forms/hzLgvA964yoowB2g1', '_blank');
-    // $('#create-question-form').toggle();
   })
 
-  var music = new Audio("background_music_1.wav");
-  music.volume = .2;
-  music.load();
-  music.loop = true;
-  music.play();
 
-  // document.getElementById("backgroundAudio").play()
-  // document.getElementById("backgroundAudio").volume = 0.2;
-  // var number = Math.floor(Math.random() * 4) + 1;
-  // document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
-  // $("#backgroundAudio").on('ended', function() {
-  //   var number = Math.floor(Math.random() * 4) + 1;
-  //   document.getElementById("backgroundAudio").src = `background_music_${number}.3gp`;
-  // });
   $('.message').hide();
   $('.verdict').hide();
   $('.verdict-weak').hide();
@@ -87,12 +53,10 @@ $('document').ready(() => {
 
   $('#toggle-music').on('click', function () {
     if (volumeStatus === 'On') {
-      // document.getElementById("backgroundAudio").volume = 0.0;
-      music.volume = 0.0;
+      music.volume = .0;
       volumeStatus = 'Off'
       $(this).text('Music On')
     } else {
-      // document.getElementById("backgroundAudio").volume = 0.1;
       music.volume = .2;
       volumeStatus = 'On'
       $(this).text('Music Off')
@@ -133,14 +97,15 @@ $('document').ready(() => {
 function showGameEnd(viaQuit = false) {
   $('.verdict').hide();
   $('#quit').hide();
-  var number = Math.floor(Math.random()*3);
-  var div = $('.verdict')[number];
+  const number = Math.floor(Math.random()*3);
+  const verdictDiv = $('.verdict')[number];
   let verdict = '';
   if (viaQuit) {
     $('.verdict-weak').show();
     verdict = "I\'ll not quit for the people."
   } else {
-    $(div).show();
+    $(verdictDiv).show();
+
     if (number === 0) {
       verdict = "I\'ll be excellent for the people. "
     }
@@ -155,7 +120,10 @@ function showGameEnd(viaQuit = false) {
 
     $('.verdict-weak').hide();
   }
-  $('.tweet-button').attr('href', `https://twitter.com/intent/tweet?text=${verdict} https://theozmic.github.io/ForThePeople/ @AsoRock @MBuhari &hashtags=ForThePeopleGame,BetterNaija,LeadUsWell`);
+  $('.tweet-button').attr('href',
+    `https://twitter.com/intent/tweet?text=${verdict} https://theozmic.github.io/ForThePeople/
+    @AsoRock @MBuhari &hashtags=ForThePeopleGame,BetterNaija,LeadUsWell`);
+
   localStorage.setItem('currentQuestion', 1);
   $('#game-result').show();
 }
